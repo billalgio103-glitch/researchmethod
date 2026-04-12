@@ -6,6 +6,7 @@ Usage:
 """
 
 import sys
+import os
 import sqlite3
 import openpyxl
 
@@ -78,6 +79,7 @@ def main(xlsx_path, db_path):
     print(f"Reading: {xlsx_path}")
     wb = openpyxl.load_workbook(xlsx_path, read_only=True, data_only=True)
 
+    os.makedirs(os.path.dirname(db_path), exist_ok=True)
     conn = sqlite3.connect(db_path)
     create_table(conn)
 
