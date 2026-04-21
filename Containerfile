@@ -7,8 +7,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install --no-cache-dir \
     openpyxl==3.1.5 \
     pandas==2.2.3 \
-    matplotlib==3.9.4 \
-    scipy==1.14.1 \
-    numpy==2.1.3
+    matplotlib==3.9.4
 
 WORKDIR /work
